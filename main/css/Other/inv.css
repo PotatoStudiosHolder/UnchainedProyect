@@ -1,0 +1,330 @@
+/* === BASE === */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* === BOTONES === */
+.btn {
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    min-width: 150px;
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #6e1dca 0%, #600a92 100%);
+    box-shadow: 0 4px 10px rgba(151, 6, 108, 0.5);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #cc3636 0%, #9e1e1e 100%);
+    box-shadow: 0 4px 10px rgba(204, 54, 54, 0.5);
+}
+
+.btn-tertiary {
+    background: linear-gradient(135deg, #1cc88a 0%, #13a673 100%);
+    box-shadow: 0 4px 10px rgba(28, 200, 138, 0.5);
+}
+
+.btn:hover {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.button-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+/* === CONTENEDORES === */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    width: 90%;
+}
+
+/* === INVENTARIO === */
+.card {
+    background-color: #252525;
+    margin: 0;
+    padding: 20px;
+}
+
+.category-content {
+    display: none;
+}
+
+.category-content.active {
+    display: block;
+}
+
+.category-tab {
+    background-color: #1a1a1a;
+    border-bottom: 3px solid transparent;
+    color: #e0e0e0;
+    cursor: pointer;
+    flex-grow: 1;
+    font-weight: 500;
+    padding: 15px 25px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.category-tab.active {
+    background-color: #252525;
+    border-bottom: 3px solid #4286f4;
+    color: white;
+}
+
+.category-tab:hover:not(.active) {
+    background-color: #222;
+    border-bottom: 3px solid #333;
+}
+
+.category-tabs {
+    background-color: #1a1a1a;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.inventory-container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.inventory-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    padding: 10px 0;
+}
+
+.inventory-item {
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.inventory-item:hover {
+    background-color: #333;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.item-img {
+    height: 60px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    width: 60px;
+}
+
+.item-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.item-quantity {
+    align-items: center;
+    background-color: #4286f4;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 24px;
+}
+
+/* === INTERFAZ - HEADER, BARRA SUPERIOR, MONEDAS === */
+.back-button {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.currency {
+    align-items: center;
+    background-color: #252525;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 8px 15px;
+}
+
+.currency-container {
+    display: flex;
+    gap: 20px;
+}
+
+.currency-icon {
+    height: 24px;
+    margin-right: 8px;
+    width: 24px;
+}
+
+.currency-value {
+    color: white;
+    font-weight: 700;
+}
+
+.top-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px 0;
+}
+
+/* === TITULOS === */
+.section-title {
+    border-bottom: 2px solid #333;
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* === USUARIO === */
+.user-avatar {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    height: 120px;
+    object-fit: cover;
+    width: 120px;
+}
+
+.user-header {
+    align-items: center;
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-name {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.user-rank {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    color: #e0e0e0;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px 0 0;
+    padding: 5px 15px;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    .category-tab {
+        min-width: 100px;
+        padding: 12px 15px;
+        white-space: nowrap;
+    }
+
+    .category-tabs {
+        overflow-x: auto;
+    }
+
+    .inventory-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .user-avatar {
+        height: 100px;
+        width: 100px;
+    }
+
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-name {
+        font-size: 1.8rem;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inventory-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .item-img {
+        height: 50px;
+        width: 50px;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Combate para GM</title>
+    <link rel="stylesheet" href="../../css/interface/combatInterface.css">
+</head>
+<body>
+    <div class="btn-container">
+        <a id="addCharacterBtn" class="btn btn-primary">Añadir Personaje</a>
+        <a id="deleteCharacterBtn" class="btn btn-secondary">Eliminar Personaje</a>
+        <a id="backBtn" class="btn btn-quaternary">Volver</a>
+    </div>
+
+    <div class="characters-container" id="charactersContainer">
+        <!-- Personajes se añadirán aquí dinámicamente -->
+    </div>
+
+    <!-- Modal para añadir personaje -->
+    <div id="addCharacterModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Añadir Personaje</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="addCharacterForm">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="gas">Gas Total:</label>
+                    <input type="number" id="gas" class="form-control" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="hojas">Hojas (max 4):</label>
+                    <input type="number" id="hojas" class="form-control" min="0" max="8" value="8" required>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../js/Interface/combatInterface.js"></script>        
+</body>
+</html>

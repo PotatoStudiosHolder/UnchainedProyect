@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/Other/inv.css">   
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <a id="backBtn" class="back-button">← Volver</a>
+            <div class="currency-container">
+                <div class="currency">
+                    <img src="../../../../resources/Images/00ResourceGallery/00Monedas/EscudoMoneda-min.png" alt="Escudos" class="currency-icon">
+                    <span class="currency-value">0</span>
+                </div>
+                <div class="currency">
+                    <img src="../../../../resources/Images/00ResourceGallery/00Monedas/RealesMoneda-min.png" alt="Reales" class="currency-icon">
+                    <span class="currency-value">0</span>
+                </div>
+                <div class="currency">
+                    <img src="../../../../resources/Images/00ResourceGallery/00Monedas/CobreMoneda-min.png" alt="Cobres" class="currency-icon">
+                    <span class="currency-value">0</span>   
+                </div>
+            </div>
+        </div>
+
+        <div class="user-card">
+            <div class="user-header">
+                <img src="./pj.png" alt="Avatar" class="user-avatar">
+                <div class="user-info">
+                    <h1 class="user-name">Inventario</h1>
+                    <p class="user-rank">Salario: 0c</p>
+                    <p class="user-rank">Ingresos semanales: 0c</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="inventory-container">
+            <div class="category-tabs">
+                <div class="category-tab active" onclick="switchCategory('armas')">Armas</div>
+                <div class="category-tab" onclick="switchCategory('utiles')">Útiles</div>
+                <div class="category-tab" onclick="switchCategory('municiones')">Municiones</div>
+                <div class="category-tab" onclick="switchCategory('consumibles')">Consumibles</div>
+                <div class="category-tab" onclick="switchCategory('materiales')">Materiales</div>
+                <div class="category-tab" onclick="switchCategory('otros')">Otros</div>
+            </div>
+
+            <!-- Categoría: Armas -->
+            <div id="armas" class="category-content active">
+                <div class="card">
+                    <h2 class="section-title">Armas</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Útiles -->
+            <div id="utiles" class="category-content">
+                <div class="card">
+                    <h2 class="section-title">Útiles</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Municiones -->
+            <div id="municiones" class="category-content">
+                <div class="card">
+                    <h2 class="section-title">Municiones</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Consumibles -->
+            <div id="consumibles" class="category-content">
+                <div class="card">
+                    <h2 class="section-title">Consumibles</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Materiales -->
+            <div id="materiales" class="category-content">
+                <div class="card">
+                    <h2 class="section-title">Materiales</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Otros -->
+            <div id="otros" class="category-content">
+                <div class="card">
+                    <h2 class="section-title">Otros</h2>
+                    <div class="inventory-grid">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../js/Other/Inv.js"></script>
+</body>
+</html>

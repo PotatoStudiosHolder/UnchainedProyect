@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Médico Avanzado</title>
+  <link rel="stylesheet" href="../../css/interface/salud.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema Médico Avanzado</h1>
+    <div id="patientStatus" class="patient-status">
+      <span id="patientStatusText">ESTABLE</span>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="body-display">
+      <div class="system-time" id="systemTime">00:00:00</div>
+      <button class="toggle-view" id="toggleView">Vista Posterior</button>
+      <div class="body-image">
+        <!-- Silueta humana mejorada usando SVG - Vista Frontal -->
+        <svg class="body-svg body-front" viewBox="0 0 200 500" id="bodySvgFront">
+          <!-- Cabeza con forma más realista -->
+          <ellipse id="head" class="body-region" cx="100" cy="50" rx="35" ry="45" data-part="head" data-has-artery="true" data-artery-name="Carótida" />
+          
+          <!-- Cuello más proporcionado -->
+          <path id="neck" class="body-region" d="M85,90 C85,80 115,80 115,90 L115,105 L85,105 Z" data-part="neck" data-has-artery="true" data-artery-name="Carótida" />
+          
+          <!-- Torso Superior con hombros -->
+          <path id="upperTorso" class="body-region" 
+                d="M70,105 C50,120 50,130 70,145 L70,160 L130,160 L130,145 C150,130 150,120 130,105 Z" 
+                data-part="upperTorso" data-has-artery="true" data-artery-name="Aorta" />
+          
+          <!-- Torso Inferior con forma de cadera -->
+          <path id="lowerTorso" class="body-region" 
+                d="M70,160 L130,160 L140,200 C140,215 130,220 100,220 C70,220 60,215 60,200 Z" 
+                data-part="lowerTorso" data-has-artery="true" data-artery-name="Cava" />
+          
+          <!-- Brazo izquierdo superior con forma más natural -->
+          <path id="leftUpperArm" class="body-region" 
+                d="M70,105 L50,110 C45,120 40,130 45,140 L65,140 Z" 
+                data-part="leftUpperArm" data-has-artery="true" data-artery-name="Humeral" data-can-tourniquet="true" />
+          
+          <!-- Brazo izquierdo inferior con forma más natural -->
+          <path id="leftLowerArm" class="body-region" 
+                d="M65,140 L45,140 C40,150 35,165 30,180 L60,180 Z" 
+                data-part="leftLowerArm" data-has-artery="true" data-artery-name="Radial" />
+          
+          <!-- Brazo derecho superior con forma más natural -->
+          <path id="rightUpperArm" class="body-region" 
+                d="M130,105 L150,110 C155,120 160,130 155,140 L135,140 Z" 
+                data-part="rightUpperArm" data-has-artery="true" data-artery-name="Humeral" data-can-tourniquet="true" />
+          
+          <!-- Brazo derecho inferior con forma más natural -->
+          <path id="rightLowerArm" class="body-region" 
+                d="M135,140 L155,140 C160,150 165,165 170,180 L140,180 Z" 
+                data-part="rightLowerArm" data-has-artery="true" data-artery-name="Radial" />
+          
+          <!-- Pierna izquierda superior con forma más anatómica -->
+          <path id="leftUpperLeg" class="body-region" 
+                d="M60,220 L90,220 C95,240 95,260 90,300 L60,300 C55,260 55,240 60,220 Z" 
+                data-part="leftUpperLeg" data-has-artery="true" data-artery-name="Femoral" data-can-tourniquet="true" />
+          
+          <!-- Pierna izquierda inferior con forma de pantorrilla -->
+          <path id="leftLowerLeg" class="body-region" 
+                d="M60,300 L90,300 C95,320 95,340 90,380 L85,400 L65,400 L60,380 C55,340 55,320 60,300 Z" 
+                data-part="leftLowerLeg" data-has-artery="true" data-artery-name="Tibial" />
+          
+          <!-- Pierna derecha superior con forma más anatómica -->
+          <path id="rightUpperLeg" class="body-region" 
+                d="M110,220 L140,220 C145,240 145,260 140,300 L110,300 C105,260 105,240 110,220 Z" 
+                data-part="rightUpperLeg" data-has-artery="true" data-artery-name="Femoral" data-can-tourniquet="true" />
+          
+          <!-- Pierna derecha inferior con forma de pantorrilla -->
+          <path id="rightLowerLeg" class="body-region" 
+                d="M110,300 L140,300 C145,320 145,340 140,380 L135,400 L115,400 L110,380 C105,340 105,320 110,300 Z" 
+                data-part="rightLowerLeg" data-has-artery="true" data-artery-name="Tibial" />
+                
+          <!-- Pies -->
+          <path id="leftFoot" class="body-region" 
+                d="M65,400 L85,400 L90,420 L60,420 Z" 
+                data-part="leftFoot" />
+                
+          <path id="rightFoot" class="body-region" 
+                d="M115,400 L135,400 L140,420 L110,420 Z" 
+                data-part="rightFoot" />
+                
+          <!-- Manos -->
+          <path id="leftHand" class="body-region" 
+                d="M30,180 L60,180 L55,200 L25,200 Z" 
+                data-part="leftHand" />
+                
+          <path id="rightHand" class="body-region" 
+                d="M140,180 L170,180 L175,200 L145,200 Z" 
+                data-part="rightHand" />
+        </svg>
+        
+        <!-- Silueta humana mejorada usando SVG - Vista Posterior -->
+        <svg class="body-svg body-back" viewBox="0 0 200 500" id="bodySvgBack">
+          <!-- Cabeza con forma más realista -->
+          <ellipse id="headBack" class="body-region" cx="100" cy="50" rx="35" ry="45" data-part="headBack" />
+          
+          <!-- Cuello más proporcionado -->
+          <path id="neckBack" class="body-region" d="M85,90 C85,80 115,80 115,90 L115,105 L85,105 Z" data-part="neckBack" />
+          
+          <!-- Torso Superior con hombros -->
+          <path id="upperTorsoBack" class="body-region" 
+                d="M70,105 C50,120 50,130 70,145 L70,160 L130,160 L130,145 C150,130 150,120 130,105 Z" 
+                data-part="upperTorsoBack" data-has-artery="true" data-artery-name="Aorta" />
+          
+          <!-- Torso Inferior con forma de cadera -->
+          <path id="lowerTorsoBack" class="body-region" 
+                d="M70,160 L130,160 L140,200 C140,215 130,220 100,220 C70,220 60,215 60,200 Z" 
+                data-part="lowerTorsoBack" data-has-artery="true" data-artery-name="Cava" />
+          
+          <!-- Brazo izquierdo superior con forma más natural -->
+          <path id="leftUpperArmBack" class="body-region" 
+                d="M70,105 L50,110 C45,120 40,130 45,140 L65,140 Z" 
+                data-part="leftUpperArmBack" data-has-artery="true" data-artery-name="Humeral" data-can-tourniquet="true" />
+          
+          <!-- Brazo izquierdo inferior con forma más natural -->
+          <path id="leftLowerArmBack" class="body-region" 
+                d="M65,140 L45,140 C40,150 35,165 30,180 L60,180 Z" 
+                data-part="leftLowerArmBack" />
+          
+          <!-- Brazo derecho superior con forma más natural -->
+          <path id="rightUpperArmBack" class="body-region" 
+                d="M130,105 L150,110 C155,120 160,130 155,140 L135,140 Z" 
+                data-part="rightUpperArmBack" data-has-artery="true" data-artery-name="Humeral" data-can-tourniquet="true" />
+          
+          <!-- Brazo derecho inferior con forma más natural -->
+          <path id="rightLowerArmBack" class="body-region" 
+                d="M135,140 L155,140 C160,150 165,165 170,180 L140,180 Z" 
+                data-part="rightLowerArmBack" />
+          
+          <!-- Pierna izquierda superior con forma más anatómica -->
+          <path id="leftUpperLegBack" class="body-region" 
+                d="M60,220 L90,220 C95,240 95,260 90,300 L60,300 C55,260 55,240 60,220 Z" 
+                data-part="leftUpperLegBack" data-has-artery="true" data-artery-name="Femoral" data-can-tourniquet="true" />
+          
+          <!-- Pierna izquierda inferior con forma de pantorrilla -->
+          <path id="leftLowerLegBack" class="body-region" 
+                d="M60,300 L90,300 C95,320 95,340 90,380 L85,400 L65,400 L60,380 C55,340 55,320 60,300 Z" 
+                data-part="leftLowerLegBack" />
+          
+          <!-- Pierna derecha superior con forma más anatómica -->
+          <path id="rightUpperLegBack" class="body-region" 
+                d="M110,220 L140,220 C145,240 145,260 140,300 L110,300 C105,260 105,240 110,220 Z" 
+                data-part="rightUpperLegBack" data-has-artery="true" data-artery-name="Femoral" data-can-tourniquet="true" />
+          
+          <!-- Pierna derecha inferior con forma de pantorrilla -->
+          <path id="rightLowerLegBack" class="body-region" 
+                d="M110,300 L140,300 C145,320 145,340 140,380 L135,400 L115,400 L110,380 C105,340 105,320 110,300 Z" 
+                data-part="rightLowerLegBack" />
+                
+          <!-- Pies -->
+          <path id="leftFootBack" class="body-region" 
+                d="M65,400 L85,400 L90,420 L60,420 Z" 
+                data-part="leftFootBack" />
+                
+          <path id="rightFootBack" class="body-region" 
+                d="M115,400 L135,400 L140,420 L110,420 Z" 
+                data-part="rightFootBack" />
+                
+          <!-- Manos -->
+          <path id="leftHandBack" class="body-region" 
+                d="M30,180 L60,180 L55,200 L25,200 Z" 
+                data-part="leftHandBack" />
+                
+          <path id="rightHandBack" class="body-region" 
+                d="M140,180 L170,180 L175,200 L145,200 Z" 
+                data-part="rightHandBack" />
+        </svg>
+      </div>
+    </div>
+    
+    <div class="data-panel">
+      <div class="vitals-monitor">
+        <div class="title-section">
+          <h2>Signos Vitales</h2>
+          <div class="section-buttons">
+            <button id="saveVitals" class="btn-primary">Guardar</button>
+            <button id="resetVitals" class="btn-secondary">Restablecer</button>
+          </div>
+        </div>
+        
+        <div class="vital-signs">
+          <div class="vital-input">
+            <label for="pulse">Pulso (BPM)</label>
+            <input type="number" id="pulse" value="80" min="0" max="220">
+            <div class="vital-trend" id="pulseTrend"></div>
+          </div>
+          <div class="vital-input">
+            <label for="bloodPressure">Presión Arterial</label>
+            <input type="text" id="bloodPressure" value="120/80">
+            <div class="vital-trend" id="bpTrend"></div>
+          </div>
+          <div class="vital-input">
+            <label for="temperature">Temperatura (°C)</label>
+            <input type="number" id="temperature" value="36.5" step="0.1" min="30" max="45">
+            <div class="vital-trend" id="tempTrend"></div>
+          </div>
+          <div class="vital-input">
+            <label for="oxygenation">Saturación O2 (%)</label>
+            <input type="number" id="oxygenation" value="98" min="0" max="100">
+            <div class="vital-trend" id="oxyTrend"></div>
+          </div>
+          <div class="vital-input">
+            <label for="consciousness">Nivel de Consciencia</label>
+            <select id="consciousness">
+              <option value="alert">Alerta</option>
+              <option value="verbal">Responde a estímulos verbales</option>
+              <option value="pain">Responde a estímulos dolorosos</option>
+              <option value="unresponsive">Sin respuesta</option>
+            </select>
+          </div>
+          <div class="vital-input">
+            <label for="hemorrhage">Nivel de Hemorragia</label>
+            <select id="hemorrhage">
+              <option value="none">Ninguna</option>
+              <option value="mild">Leve</option>
+              <option value="moderate">Moderada</option>
+              <option value="severe">Severa</option>
+              <option value="critical">Crítica</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Se eliminó la sección de "Tiempo Estimado de Supervivencia" -->
+      
+      <div class="wounds-list">
+        <div class="title-section">
+          <h2>Heridas Documentadas</h2>
+          <div class="section-buttons">
+            <button id="clearWounds" class="btn-danger">Limpiar Todo</button>
+            <button id="declareDeceased" class="btn-danger">Declarar Fallecido</button>
+          </div>
+        </div>
+        <div id="woundsList">
+          <!-- Las heridas se añadirán dinámicamente aquí -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal para añadir heridas -->
+  <div class="modal" id="woundModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Añadir Herida</h2>
+        <span class="close" id="closeModal">&times;</span>
+      </div>
+      
+      <form class="wound-form" id="woundForm">
+        <input type="hidden" id="bodyPart" value="">
+        
+        <div class="form-group">
+          <label for="woundType">Tipo de Herida</label>
+          <select id="woundType" onchange="updateWoundOptions()">
+            <option value="gunshot">Herida de Bala</option>
+            <option value="cut">Corte</option>
+            <option value="blunt">Trauma Contuso</option>
+            <option value="burn">Quemadura</option>
+            <option value="fracture">Fractura</option>
+            <option value="puncture">Herida Punzante</option>
+            <option value="internal">Lesión Interna</option>
+          </select>
+        </div>
+        
+        <div class="form-group" id="internalInjuryTypeGroup" style="display: none;">
+          <label for="internalInjuryType">Tipo de Lesión Interna</label>
+          <select id="internalInjuryType">
+            <option value="pneumothorax">Neumotórax</option>
+            <option value="hemothorax">Hemotórax</option>
+            <option value="internalBleeding">Sangrado Interno</option>
+            <option value="organDamage">Daño a Órganos</option>
+            <option value="brainInjury">Lesión Cerebral</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="severity">Severidad</label>
+          <select id="severity">
+            <option value="minor">Leve</option>
+            <option value="moderate">Moderada</option>
+            <option value="severe">Severa</option>
+            <option value="critical">Crítica</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="bleeding">Sangrado</label>
+          <select id="bleeding">
+            <option value="none">Ninguno</option>
+            <option value="mild">Leve</option>
+            <option value="moderate">Moderado</option>
+            <option value="severe">Severo</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="notes">Notas Adicionales</label>
+          <textarea id="notes" rows="3"></textarea>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="cancel-btn" id="cancelWound">Cancelar</button>
+          <button type="submit" class="submit-btn">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal para torniquetes -->
+  <div class="modal" id="tourniquetModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Aplicar Torniquete</h2>
+        <span class="close" id="closeTourniquetModal">&times;</span>
+      </div>
+      
+      <div class="tourniquet-info">
+        <p>Vas a aplicar un torniquete en <span id="tourniquetBodyPart"></span>.</p>
+        <p>Esto detendrá la hemorragia pero puede causar daño tisular si se mantiene demasiado tiempo.</p>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" class="cancel-btn" id="cancelTourniquet">Cancelar</button>
+        <button type="button" class="apply-btn" id="applyTourniquet">Aplicar Torniquete</button>
+        <button type="button" class="remove-btn" id="removeTourniquet" style="display:none;">Retirar Torniquete</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../../js/Interface/salud.js"></script>
+</body>
+</html>

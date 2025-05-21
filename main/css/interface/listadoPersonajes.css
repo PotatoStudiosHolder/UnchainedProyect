@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.fallecido{
+    color: #9e1e1e;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.card-container {
+    background-color: #1e1e1e;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+/* Este selector se aplica a los contenedores de subapartados, para organizar en una cuadrícula
+   de dos columnas a partir de los botones. */
+.button-section > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Se configura el título del subapartado para que ocupe toda la fila y se mantenga centrado */
+.button-section > div h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.divider {
+    height: 2px;
+    background-color: #333;
+    margin: 20px 0;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #252525;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.boton {
+    background-color: #4e73df;
+    border: none;
+    color: rgb(248, 248, 248);
+    padding: 12px 25px;
+    text-align: center;
+    font-size: 16px;
+    margin: 8px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boton:hover {
+    background-color: #1cc88a;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+nav {
+    background-color: #373B44;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.central {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #cc3636 0%, #9e1e1e 100%);
+    box-shadow: 0 4px 10px rgba(204, 54, 54, 0.5);
+}
+
+.btn-tertiary {
+    background: linear-gradient(135deg, #1cc88a 0%, #13a673 100%);
+    box-shadow: 0 4px 10px rgba(28, 200, 138, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #6e1dca 0%, #600a92 100%);
+    box-shadow: 0 4px 10px rgba(151, 6, 108, 0.5);
+}
+
+@media (max-width: 768px) {
+    .button-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .boton {
+        width: 80%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

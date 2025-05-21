@@ -1,0 +1,236 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;    
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.user-header {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-name {
+    margin: 0;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.user-rank {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin: 5px 0 0;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.section-title {
+    color: white;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin: 30px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+.card {
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #252525;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #333;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.status-alive {
+    background-color: #1cc88a;
+    color: #fff;
+}
+
+.status-deceased {
+    background-color: #cc3636;
+    color: #fff;
+}
+
+.character-link {
+    color: #4286f4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.character-link:hover {
+    color: #63b3ed;
+    text-decoration: underline;
+}
+
+.sanction-warning {
+    background-color: #f6ad55;
+    color: #1a202c;
+}
+
+.sanction-ban {
+    background-color: #cc3636;
+    color: white;
+}
+
+.sanction-mute {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #cc3636 0%, #9e1e1e 100%);
+    box-shadow: 0 4px 10px rgba(204, 54, 54, 0.5);
+}
+
+.btn-tertiary {
+    background: linear-gradient(135deg, #1cc88a 0%, #13a673 100%);
+    box-shadow: 0 4px 10px rgba(28, 200, 138, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    box-shadow: 0 4px 10px rgba(66, 134, 244, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+.user-avatar {    
+    width: 100px;
+            height: 100px;
+
+    }
+    
+.user-name {
+            font-size: 1.8rem;
+
+    }
+
+
+    th, td {    
+    padding: 8px 10px;
+            font-size: 0.9rem;
+
+    }    
+}

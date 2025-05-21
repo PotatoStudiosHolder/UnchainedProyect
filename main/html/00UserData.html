@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/main/UserData.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user-card">
+            <div class="user-header">
+                <div class="user-info">
+                    <h1 class="user-name">NombreUsuario | ID</h1>
+                    <p class="user-rank">Rango: Administrador</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Personajes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Personaje</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#" class="character-link">Aragorn Elessar</a></td>
+                    <td><span class="status status-alive">Vivo</span></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="character-link">Boromir</a></td>
+                    <td><span class="status status-deceased">Fallecido</span></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="character-link">Gandalf el Gris</a></td>
+                    <td><span class="status status-alive">Vivo</span></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="character-link">Gollum</a></td>
+                    <td><span class="status status-deceased">Fallecido</span></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="character-link">Legolas</a></td>
+                    <td><span class="status status-alive">Vivo</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">Historial de Sanciones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sanción</th>
+                    <th>Motivo</th>
+                    <th>Fecha</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="status sanction-warning">Advertencia</span></td>
+                    <td>Por tonto</td>
+                    <td>15/03/2025</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td><span class="status sanction-mute">Silenciado</span></td>
+                    <td>Por tonto</td>
+                    <td>22/04/2025</td>
+                    <td>24 horas</td>
+                </tr>
+                <tr>
+                    <td><span class="status sanction-ban">Suspensión</span></td>
+                    <td>Por tonto</td>
+                    <td>01/05/2025</td>
+                    <td>3 días</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="button-section">
+            <a id="backBtn" class="btn btn-quaternary">Volver</a>
+    </div>
+    <script src="../../../../js/main/UserData.js"></script>
+</body>
+</html>

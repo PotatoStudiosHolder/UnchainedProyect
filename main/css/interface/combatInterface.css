@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-color: rgb(43, 43, 43);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #e74a3b 0%, #be2617 100%);
+    box-shadow: 0 4px 10px rgba(231, 74, 59, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    box-shadow: 0 4px 10px rgba(66, 134, 244, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+.central {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 30px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: rgb(55, 55, 55);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    animation: modalopen 0.3s;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    color: #4e73df;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.characters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.character-card {
+    background: linear-gradient(135deg, #333 0%, #222 100%);
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid #444;
+}
+
+.character-card h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #4e73df;
+}
+
+.gas-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.gas-container strong {
+    color: #4e73df;
+}
+
+.hojas-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.gas-input, .hojas-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.gas-label, .hojas-label {
+    flex: 1;
+    text-align: center;
+}
+
+.gas-max, .hojas-max {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #888;
+    text-align: center;
+}
+
+.attributes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.attribute-item {
+    text-align: center;
+}
+
+.attribute-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+.attribute-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.card-selected {
+    border: 2px solid #4e73df;
+    box-shadow: 0 0 15px rgba(78, 115, 223, 0.5);
+}
+
+.rango-container {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}

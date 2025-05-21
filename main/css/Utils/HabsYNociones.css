@@ -1,0 +1,132 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.split-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.table-container {
+    background-color: #1e1e1e;
+    min-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 0;
+}
+
+.table-header {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    padding: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.table-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #252525;
+    color: #63b3ed;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #333;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
+}
+
+tr:hover {
+    background-color: #252525;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    box-shadow: 0 4px 10px rgba(66, 134, 244, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+    
+    .table-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .btn {
+        width: 80%;
+    }
+}
