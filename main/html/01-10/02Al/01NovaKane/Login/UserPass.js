@@ -1,3 +1,10 @@
+const backBtn = document.getElementById('backBtn');
+backBtn.addEventListener('click', goBack);
+
+function goBack() {
+    history.back();
+}
+
 // Modificación al primer archivo (paste.txt)
 document.addEventListener('DOMContentLoaded', function() {
     // Contraseña correcta (en un entorno real, esto se verificaría en el servidor)

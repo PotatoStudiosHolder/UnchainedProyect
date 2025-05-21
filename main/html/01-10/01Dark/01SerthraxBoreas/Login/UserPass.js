@@ -1,3 +1,10 @@
+const backBtn = document.getElementById('backBtn');
+backBtn.addEventListener('click', goBack);
+
+function goBack() {
+    history.back();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Obtener la contraseña desde las variables de entorno
     const CORRECT_PASSWORD = "Incorrecta";
