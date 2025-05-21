@@ -2,7 +2,7 @@ require('dotenv').config();
 // Modificación al primer archivo (paste.txt)
 document.addEventListener('DOMContentLoaded', function() {
     // Contraseña correcta (en un entorno real, esto se verificaría en el servidor)
-    const CORRECT_PASSWORD = CONTRA_USER;
+    const CORRECT_PASSWORD = CONTRA_NAR;
     
     // Elementos del DOM
     const passwordInput = document.getElementById('password');
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passwordInput.value = "";
             
             // Redirigir al usuario a otra página
-            window.location.href = "../00Pj.html";
+            window.location.href = "../html/Interface/GMmode.html";
         }else {
             // Contraseña incorrecta
             failedAttempts++;
