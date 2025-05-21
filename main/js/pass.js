@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // La contraseña correcta. Cámbiala al valor real.
-  const CORRECT_PASSWORD = "incorrecta";
+  const CORRECT_PASSWORD = "Mamapinga";
 
   // Elementos del DOM
   const passwordInput = document.getElementById('password');

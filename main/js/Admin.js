@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Contraseña de administrador (en un entorno real, se verificará en el servidor)
-    const ADMIN_PASSWORD = "admin";
+    const ADMIN_PASSWORD = "Unch@1n3dA5m1nPr093ct";
     
     // Elementos del DOM
     const adminLoginSection = document.getElementById('admin-login-section');
@@ -554,3 +554,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 1000);
 });
+
+const backBtn = document.getElementById('backBtn');
+backBtn.addEventListener('click', goBack);
+
+function goBack() {
+    history.back();
+}
