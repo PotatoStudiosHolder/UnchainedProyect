@@ -49,7 +49,7 @@ a{
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-8px);
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
 }
 
