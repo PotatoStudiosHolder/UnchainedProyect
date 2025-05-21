@@ -1,7 +1,7 @@
 // Modificación al primer archivo (paste.txt)
 document.addEventListener('DOMContentLoaded', function() {
     // Contraseña correcta (en un entorno real, esto se verificaría en el servidor)
-    const CORRECT_PASSWORD = "incorrecta";
+    const CORRECT_PASSWORD = "23456!";
     
     // Elementos del DOM
     const passwordInput = document.getElementById('password');
