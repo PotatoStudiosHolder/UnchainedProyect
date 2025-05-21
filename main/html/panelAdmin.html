@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="../css/Admin.css">
+</head>
+<body>
+    <div class="central">
+        <h1>Panel de Administración</h1>
+    </div>
+
+    <div id="admin-login-section" class="admin-password-form">
+        <div class="form-group">
+            <label for="admin-password">Contraseña de Administrador:</label>
+            <input type="password" id="admin-password" placeholder="Ingrese la contraseña de administrador">
+        </div>
+
+        <div class="btn-container">
+            <button id="admin-login-btn" class="btn btn-primary">Acceder</button>
+        </div>
+        
+        <div id="admin-error" class="error-message"></div>
+    </div>
+
+    <div id="admin-panel" class="admin-panel" style="display: none;">
+        <div class="admin-header">
+            <div class="admin-title">Panel de Control</div>
+            <button id="refresh-btn" class="btn btn-quaternary">Actualizar</button>
+        </div>
+        
+        <div id="message" class="message" style="display: none;"></div>
+
+        <a href="../../index.html" class="back-link">← Volver a la página principal</a>
+
+        <div class="stats-container">
+            <div class="stats-title">Estadísticas</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Total IPs bloqueadas</span>
+                    <span id="total-blocked" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">IPs con bloqueo temporal</span>
+                    <span id="temp-blocked" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total intentos de acceso</span>
+                    <span id="total-access" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección para bloquear IP manualmente -->
+        <div class="block-ip-container">
+            <div class="block-ip-title">Bloquear IP manualmente</div>
+            <div class="block-ip-form">
+                <input type="text" id="ip-to-block" placeholder="Introduzca dirección IPv6 o IPv4" class="ip-input">
+                <button id="block-ip-btn" class="btn btn-danger block-ip-btn">Bloquear IP</button>
+            </div>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="blocked-ips">IPs Bloqueadas</button>
+                <button class="tab-button" data-tab="access-logs">Registro de Accesos</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Panel de IPs Bloqueadas -->
+                <div id="blocked-ips" class="tab-panel active">
+                    <table id="ips-table">
+                        <thead>
+                            <tr>
+                                <th>IP</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
+                                <th>Tiempo restante</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ips-list">
+                            <!-- Las IPs se cargarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="no-ips" class="no-ips" style="display: none;">
+                        No hay IPs bloqueadas actualmente.
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button id="unblock-all-btn" class="btn btn-danger">Desbloquear todas las IPs</button>
+                    </div>
+                </div>
+
+                <!-- Panel de Registro de Accesos -->
+                <div id="access-logs" class="tab-panel">
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="success">Solo exitosos</button>
+                        <button class="filter-btn" data-filter="failure">Solo fallidos</button>
+                    </div>
+
+                    <table id="logs-table">
+                        <thead>
+                            <tr>
+                                <th>IP</th>
+                                <th>Tipo</th>
+                                <th>Fecha y Hora</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logs-list">
+                            <!-- Los registros se cargarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                    
+                    <div id="no-logs" class="no-ips" style="display: none;">
+                        No hay registros de acceso disponibles.
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button id="clear-logs-btn" class="btn btn-danger">Borrar historial</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/Admin.js"></script>
+</body>
+</html>

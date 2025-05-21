@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-color: rgb(43, 43, 43);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    box-shadow: 0 4px 10px rgba(78, 115, 223, 0.5);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #e74a3b 0%, #b02a1b 100%);
+    box-shadow: 0 4px 10px rgba(231, 74, 59, 0.5);
+}
+
+.btn-quaternary {
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+    box-shadow: 0 4px 10px rgba(66, 134, 244, 0.5);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #1cc88a 0%, #13855c 100%);
+    box-shadow: 0 4px 10px rgba(28, 200, 138, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+.central {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.admin-panel {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.back-link {
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e74a3b;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #c0392b;
+}
+
+.no-ips {
+    text-align: center;
+    padding: 20px;
+    color: #aaaaaa;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+}
+
+.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+}
+
+.admin-password-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.stats-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.stats-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.tab-container {
+    margin-top: 20px;
+}
+
+.tab-navigation {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background-color: transparent;
+    border: none;
+    color: #aaaaaa;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    color: white;
+}
+
+.tab-button.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4e73df;
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.success-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: rgba(28, 200, 138, 0.2);
+    color: #1cc88a;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.failure-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.filter-container {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background-color: #4e73df;
+}
+
+/* Estilos para la sección de bloqueo de IP manual */
+.block-ip-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.block-ip-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.block-ip-form {
+    display: flex;
+    gap: 10px;
+}
+
+.ip-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+}
+
+.block-ip-btn {
+    min-width: 120px;
+}
+
+.ipv6 {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.ipv4 {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 10px;
+}
