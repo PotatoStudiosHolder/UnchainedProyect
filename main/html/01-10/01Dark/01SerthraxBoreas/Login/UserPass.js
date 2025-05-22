@@ -7,7 +7,7 @@ function goBack() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Obtener la contraseña desde las variables de entorno
-    const CORRECT_PASSWORD = "Incorrecta";
+    const CORRECT_PASSWORD = "dominionboreas333";
 
     // Elementos del DOM
     const passwordInput = document.getElementById('password');

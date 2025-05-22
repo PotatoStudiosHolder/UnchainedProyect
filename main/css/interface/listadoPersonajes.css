@@ -168,6 +168,23 @@ nav {
     box-shadow: 0 4px 10px rgba(151, 6, 108, 0.5);
 }
 
+.back-btn{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #6e1dca 0%, #600a92 100%);
+    box-shadow: 0 4px 10px rgba(151, 6, 108, 0.5);
+}
+
 @media (max-width: 768px) {
     .button-section {
         flex-direction: column;

@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             passwordInput.value = "";
             
             // Redirigir al usuario a otra página
-            window.location.href = "../00Pj.html";
+            window.location.href = "../00PJ.html";
         }else {
             // Contraseña incorrecta
             failedAttempts++;
