@@ -154,6 +154,12 @@ tr:hover {
     display: block;
 }
 
+.central2{
+    text-align: center;
+    margin-top: 100px; 
+    font-size: 15px;
+}
+
 @media (max-width: 768px) {
     .tab-btn {
         padding: 10px 20px;
