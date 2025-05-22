@@ -15,8 +15,9 @@ body {
     text-align: center;
 }
 
-.fallecido{
+#fallecido{
     color: #9e1e1e;
+    font-weight: bold;
 }
 
 a {
