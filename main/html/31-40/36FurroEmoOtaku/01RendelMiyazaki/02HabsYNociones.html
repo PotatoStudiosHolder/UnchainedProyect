@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Habilidades y Nociones</title>
+    <link rel="stylesheet" href="../../../../css/Utils/PjHabsYNociones.css">  
+</head>
+<body>
+    <div class="main-container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="habilidades">Habilidades</button>
+            <button class="tab-btn" data-tab="nociones">Nociones</button>
+        </div>
+        
+        <!-- Tab contenido para Habilidades -->
+        <div id="habilidades" class="tab-content active">
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Habilidades</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Cooldown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Entrenamiento ODM</td>
+                            <td>El soldado está entrenado en el uso del equipo de maniobras tridimensionales</td>
+                            <td>PASIVA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Tab contenido para Nociones -->
+        <div id="nociones" class="tab-content">
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Nociones</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <a class="btn btn-quaternary" id="backBtn">Volver</a>
+            <a href="#" class="btn btn-primary" id="infoBtn">Más Información</a>
+        </div>
+    </div>
+    <footer class="central2">
+        <p>©2025UnchainedProyect</p>
+    </footer>
+    <script src="../../../../js/Utils/HabsYNociones.js"></script>
+</body>
+</html>
